@@ -5,27 +5,42 @@
     import projects from '../data/projects.json';
     import education from '../data/education.json';
     import skillsData from '../data/skills.json';
+
+    import { onMount } from 'svelte';
+    let isMobile = false;
+
+    // Function to check window width and update isMobile
+    const checkMobile = () => {
+        isMobile = window.innerWidth < 768;
+    };
+
+    onMount(() => {
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    });
   </script>
   
   <!-- Wrap the page in a container with dark mode activated -->
   <div class="min-h-screen bg-gray-900 text-gray-100">
     <!-- Header -->
     <header class="bg-gray-800 shadow">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="text-xl font-bold text-gray-100">Princeton Dychinco</div>
-        <nav>
-          <ul class="flex space-x-6">
-            <li><a href="#about" class="text-gray-300 hover:text-gray-100 transition-colors">About</a></li>
-            <li><a href="#experience" class="text-gray-300 hover:text-gray-100 transition-colors">Experience</a></li>
-            <li><a href="#hackathons" class="text-gray-300 hover:text-gray-100 transition-colors">Hackathons</a></li>
-            <li><a href="#projects" class="text-gray-300 hover:text-gray-100 transition-colors">Projects</a></li>
-            <li><a href="#skills" class="text-gray-300 hover:text-gray-100 transition-colors">Skills</a></li>
-            <li><a href="#education" class="text-gray-300 hover:text-gray-100 transition-colors">Education</a></li>
-            <li><a href="#contact" class="text-gray-300 hover:text-gray-100 transition-colors">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div class="text-xl font-bold text-gray-100">Princeton Dychinco</div>
+          <!-- Conditionally add horizontal scrolling if on mobile -->
+          <nav class={isMobile ? "overflow-x-auto" : ""}>
+            <ul class="flex space-x-6 whitespace-nowrap">
+              <li><a href="#about" class="text-gray-300 hover:text-gray-100 transition-colors">About</a></li>
+              <li><a href="#experience" class="text-gray-300 hover:text-gray-100 transition-colors">Experience</a></li>
+              <li><a href="#hackathons" class="text-gray-300 hover:text-gray-100 transition-colors">Hackathons</a></li>
+              <li><a href="#projects" class="text-gray-300 hover:text-gray-100 transition-colors">Projects</a></li>
+              <li><a href="#skills" class="text-gray-300 hover:text-gray-100 transition-colors">Skills</a></li>
+              <li><a href="#education" class="text-gray-300 hover:text-gray-100 transition-colors">Education</a></li>
+              <li><a href="#contact" class="text-gray-300 hover:text-gray-100 transition-colors">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
   
     <main class="container mx-auto px-4 py-8">
       <!-- Hero Section with a local image and transparent text background -->
