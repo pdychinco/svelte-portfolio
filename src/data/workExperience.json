@@ -1,0 +1,24 @@
+[
+    {
+      "title": "Data Engineer (Coop)",
+      "company": "Insurance Corporation of British Columbia",
+      "location": "North Vancouver, BC",
+      "period": "Jan - Aug 2023",
+      "details": "Developed CI/CD data pipelines using Spark Scala and validated table logic with SQL testing while working in a Hadoop-based Big Data environment."
+    },
+    {
+      "title": "Infrastructure Platform Admin (Coop)",
+      "company": "Insurance Corporation of British Columbia",
+      "location": "North Vancouver, BC",
+      "period": "Sept 2023 - Apr 2024",
+      "details": "Monitored resource allocation, executed scheduled jobs, and supported data pipelines on distributed computing clusters using Linux commands."
+    },
+    {
+      "title": "Data Engineer (Coop)",
+      "company": "Insurance Corporation of British Columbia",
+      "location": "North Vancouver, BC",
+      "period": "May - Aug 2024",
+      "details": "Conducted comprehensive testing and validation of Tableau dashboard reports and data extracts for external vendor usage."
+    }
+  ]
+  
